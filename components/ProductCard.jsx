@@ -1,5 +1,7 @@
 'use client'
 import Image from "next/image";
+import React from 'react';
+
 import { useRouter } from "next/navigation";
 
 const ProductCard = ({ products,handleEdit, handleDelete }) => {

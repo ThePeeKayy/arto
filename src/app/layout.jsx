@@ -1,4 +1,5 @@
 import "/styles/globals.css";
+import React from "react";
 import Nav from "../../components/Nav";
 import Provider from "../../components/Provider";
 import { StateContext } from "../../context/StateContext";

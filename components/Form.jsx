@@ -1,4 +1,6 @@
 'use client'
+import React from 'react';
+
 import { IoMdPhotos } from "react-icons/io";
 import ImageShow from './ImageShow';
 import SelectMenu from './SelectMenu';

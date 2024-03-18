@@ -5,7 +5,7 @@ import ChannelSearch from './ChannelSearch'
 import TeamChannelPreview from './TeamChannelPreview'
 import TeamChannelList from './TeamChannelList'
 import { useStateContext } from '../../context/StateContext'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const customChannelMessagingFilter = (channels) => {
   return channels.filter((channel) => channel.type=='messaging' )
@@ -23,7 +23,7 @@ const ChannelListContainer = () => {
     })} else {
       setFilter({members:{$in:[client.userID]}})
     }
-  }, [channelQuery])
+  }, [channelQuery,client.userID])
 
   return (
     <div className='w-full'>

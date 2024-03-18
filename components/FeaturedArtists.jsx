@@ -3,6 +3,8 @@ import person2 from '../assets/exampleartists/person2.jpg'
 import person3 from '../assets/exampleartists/person3.jpg'
 import person4 from '../assets/exampleartists/person4.jpg'
 import Image from 'next/image'
+import React from 'react';
+
 const people = [
   {
     name: 'Diego Fernandezs',

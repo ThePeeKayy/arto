@@ -5,12 +5,12 @@ import { useStateContext } from '../../context/StateContext'
 import { useSession } from 'next-auth/react'
 
 const TeamChannelPreview = ({ channel }) => {
+    const initialRef = useRef(false)
     const {channel:activeChannel, client ,setActiveChannel} = useChatContext()
     const lastMessage = channel.state.messages[channel.state.messages.length - 1];
     const {setIsPreviewing, channelQuery, setActiveAuthor} = useStateContext()
     const {data:session} = useSession()
     const [currentChannel, setCurrentChannel] = useState({})
-    let initial
     const fetchData = async () =>{
         try {
             await channel.delete()
@@ -23,18 +23,19 @@ const TeamChannelPreview = ({ channel }) => {
     }
     const isCreating = sessionStorage.getItem('isCreating');
     useEffect(() => {
+        let initial = initialRef.current
         if ((!currentChannel && lastMessage && !isCreating)|| (!currentChannel && isCreating && channel?.data?.author !== session.user.name) ){ 
             setCurrentChannel(channel)
             setActiveChannel(channel)
         }
-        initial = sessionStorage.getItem('initial')
         
         if ( !initial && !channelQuery && !isCreating && !lastMessage && typeof window !== 'undefined') {
             fetchData()
+            initialRef.current=true
         }
 
         
-    }, []);
+    }, [initial, currentChannel,lastMessage,isCreating, channelQuery]);
 
     const DirectPreview = () => {
         const members = Object.values(channel.state.members).filter(({user})=>user.id !== client.userID)  

@@ -1,3 +1,4 @@
+import React from "react";
 import HeroBanner from "../../components/HeroBanner";
 import PopularProducts from "../../components/PopularProducts";
 import FeaturedArtists from "../../components/FeaturedArtists";

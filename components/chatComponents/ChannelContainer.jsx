@@ -81,7 +81,7 @@ const ChannelContainer = () => {
       localStorage.removeItem('offering')
       setChannelHasOffer(false)
     }
-  }, [title]);
+  }, [title,channelHasOffer,handleProduct, img, offering, setModal]);
 
   
 

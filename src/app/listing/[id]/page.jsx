@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { CheckIcon } from '@heroicons/react/20/solid'
 import { ShieldCheckIcon } from '@heroicons/react/24/outline'
 import { useRouter } from 'next/navigation';
@@ -64,7 +64,7 @@ const ProductOverView = ({params}) => {
     }
     if (!product.author) fetchData()
     if (product.author) fetchAuthor()
-  }, [product.author])
+  }, [product.author, params.id, router])
 
   const handleAddCart =(e) => {
     e.preventDefault()

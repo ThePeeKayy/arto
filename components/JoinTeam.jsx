@@ -1,5 +1,6 @@
-
+import React from 'react';
 import { CheckCircleIcon } from '@heroicons/react/20/solid'
+
 
 const benefits = [
     'Competitive salaries',

@@ -5,6 +5,8 @@ import banner3 from '../assets/arto3.jpg'
 import banner4 from '../assets/arto4.jpg'
 import banner5 from '../assets/arto5.jpg'
 import Image from 'next/image'
+import React from 'react';
+
 import { useStateContext } from '../context/StateContext'
 const Hero = () => {
   const {handleGuestMode,guestSession} = useStateContext()

@@ -1,5 +1,5 @@
 'use client'
-
+import React from 'react';
 import { useStateContext } from "../../context/StateContext"
 
 const TeamChannelList = ({children, loading}) => {

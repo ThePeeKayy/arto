@@ -1,4 +1,5 @@
 import { FaWhatsapp } from "react-icons/fa";
+import React from 'react';
 
 const navigation = {
   social: [

@@ -1,6 +1,7 @@
 'use client'
+import React, { useEffect, useState } from "react"
 import { useSession } from "next-auth/react"
-import { useEffect, useState } from "react"
+
 import ProductCard from "../../../../components/ProductCard"
 import { FaAngleLeft,FaAngleRight } from "react-icons/fa";
 import Footer from "../../../../components/Footer";
@@ -9,7 +10,7 @@ import Image from "next/image"
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 
-const page = ({params}) => {
+const Page = ({params}) => {
     const {data:session} = useSession()
     const router = useRouter()
     const [userProducts, setUserProducts] = useState([])
@@ -41,7 +42,7 @@ const page = ({params}) => {
         if (!userData) fetchUserDetails()
         if (userData) fetchData()
         
-      }, [userData])
+      }, [userData,params.id])
 
     const deleteFunction = async(id) =>{
       await fetch(`/api/listing/${id}`,{method:'DELETE'});
@@ -110,4 +111,4 @@ const page = ({params}) => {
     )
 }
 
-export default page
+export default Page

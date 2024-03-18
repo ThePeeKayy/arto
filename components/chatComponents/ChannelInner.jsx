@@ -66,7 +66,7 @@ const TeamChannelHeader = ({setOffered}) => {
       if (channel.data.offer ){
         setOffered(true)
       }
-    }, [offer,channel?.data?.offer])
+    }, [offer,channel?.data?.offer,channel,setOffer,setOffered])
     
     useEffect(()=>{
         if (acceptedOffer) {
@@ -77,7 +77,7 @@ const TeamChannelHeader = ({setOffered}) => {
         setAcceptedOffer(0)
       }
       setActiveAuthor(channel.data.author)
-    },[acceptedOffer])
+    },[acceptedOffer,setAcceptedOffer,channel, setActiveAuthor ])
 
     const handleRedirect = () => {router.push(`/listing/${channel.data.productid}`)}
 

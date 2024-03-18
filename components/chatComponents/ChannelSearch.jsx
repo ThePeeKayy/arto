@@ -2,6 +2,7 @@
 
 import { CiSearch } from "react-icons/ci";
 import { useStateContext } from "../../context/StateContext";
+import React from 'react';
 
 const ChannelSearch = () => {
     const {channelQuery, setChannelQuery, isPreviewing} = useStateContext()

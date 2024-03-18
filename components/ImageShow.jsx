@@ -21,7 +21,7 @@ const ImageShow = ({imgUrls,setImgUrls, currentImages}) => {
         setImgUrls(prevState => [...prevState,unpadded])
         setLoaded(true)
       })}
-    }, [currentImages])
+    }, [currentImages,loaded, setImgUrls])
     
     const handleClick =(index)=>{
         setCurrentId(index)

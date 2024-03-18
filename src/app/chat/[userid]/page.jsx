@@ -5,7 +5,7 @@ import ChannelListContainer from '../../../../components/chatComponents/ChannelL
 import ChannelContainer from '../../../../components/chatComponents/ChannelContainer'
 import { useSession } from 'next-auth/react'
 import 'stream-chat-react/dist/css/index.css'
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useStateContext } from '../../../../context/StateContext'
 
 const apiKey = process.env.NEXT_PUBLIC_STREAM_API_KEY
@@ -33,7 +33,7 @@ const ChatPage =({params}) => {
     }
     localStorage.setItem('initial',true)
     
-  }, [token])
+  }, [token, guestSession.id, guestSession.image, guestSession.name, guestSession.streamtoken, params.userid, session.user.image, session.user.name])
   
   
 

@@ -35,7 +35,7 @@ const EditPage = ({params}) => {
     })
   };
       if (params.id && !listing.title)fetchListing()
-  },[]);
+  },[listing.title, params.id]);
 
   const editListing = async (event) => {
     event.preventDefault();
