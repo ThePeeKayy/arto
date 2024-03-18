@@ -19,7 +19,7 @@ const RootLayout = ({children, session}) => {
         <StateContext>
         <main>
           <Toaster />
-          <div className="background-container relative z-10 overflow-hidden mx-8">
+          <div className="background-container relative z-10 overflow-hidden px-12 sm:px-0">
             <Nav className='z-10'/>
             <div className="main z-[-2]">
               <div className="z-0 relative">
