@@ -1,8 +1,9 @@
 import bcrypt from 'bcrypt';
 import {Pool} from 'pg';
 import crypto from 'crypto'
+const encodedPassword = encodeURIComponent('(LsU/4ZZDffpYtx');
 const db = new Pool({
-    connectionString:'postgres://postgres.iqcfagvphwzdefttsyfe:(LsU/4ZZDffpYtx@aws-0-ap-southeast-1.pooler.supabase.com:5432/postgres'
+    connectionString:`postgres://postgres.iqcfagvphwzdefttsyfe:${encodedPassword}@aws-0-ap-southeast-1.pooler.supabase.com:5432/nextmarket`
 });
 
 async function getUserById(id) {
