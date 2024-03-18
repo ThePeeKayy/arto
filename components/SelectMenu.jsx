@@ -31,7 +31,7 @@ const SelectMenu = ({ setListing, setCategory,currentCategory }) => {
       setSelected(foundCategory)
 
     }
-  }, [setCategory, setListing,currentCategory,category]);
+  }, [setCategory, setListing,currentCategory]);
 
   const handleSelect = (selectedCategory) => {
     if (setListing) {

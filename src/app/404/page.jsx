@@ -2,7 +2,7 @@
 import React from "react"
 import { useRouter } from "next/navigation"
 
-export default function errorpage() {
+export default function Errorpage() {
     const router = useRouter()
     const handleHome = () => {
         router.push('/')

@@ -8,6 +8,7 @@ import {TiDeleteOutline} from 'react-icons/ti'
 import Link from 'next/link'
 import toast from "react-hot-toast"
 import { getStripe } from '../utils/getStripe'
+import Image from 'next/image'
 
 export default function Cart() {
     const {showCart, setShowCart, toggleCartItemQuantity, cartItems, setCartItems,onRemove, totalPrice, setTotalPrice,totalQuantity,setTotalQuantities} = useStateContext()
@@ -81,9 +82,10 @@ export default function Cart() {
                                 {cartItems.map((product) => (
                                 <li key={product.id} className="flex py-6">
                                     <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                                    <img
+                                    <Image
                                         src={product.imageSrc}
                                         alt={product.imageAlt}
+                                        fill={true}
                                         className="h-full w-full object-cover object-center"
                                     />
                                     </div>

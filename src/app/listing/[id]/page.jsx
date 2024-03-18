@@ -136,7 +136,7 @@ const ProductOverView = ({params}) => {
         {/* Product image */}
         <div className="mt-10 lg:col-start-2 lg:row-span-2 relative lg:mt-0 lg:self-center">
           <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg">
-            {product.imgurls && <img src={product.imgurls[index].slice(0,-1)} alt={`${product.title} image`} className="h-full w-full object-cover object-center" />}
+            {product.imgurls && <Image src={product.imgurls[index].slice(0,-1)} fill={true} alt={`${product.title} image`} className="h-full w-full object-cover object-center" />}
           </div>
           <div className='flex flex-row justify-start ml-3'>
           {product.imgurls && product.imgurls.map((imgUrl,i)=>(
