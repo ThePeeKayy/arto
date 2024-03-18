@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState} from 'react'
+import React, { useEffect, useState,useRef} from 'react'
 import {Avatar,useChatContext} from 'stream-chat-react'
 import { useStateContext } from '../../context/StateContext'
 import { useSession } from 'next-auth/react'
@@ -35,7 +35,7 @@ const TeamChannelPreview = ({ channel }) => {
         }
 
         
-    }, [initial, currentChannel,lastMessage,isCreating, channelQuery]);
+    }, [initialRef, currentChannel,lastMessage,isCreating, channelQuery,fetchData, session?.user?.name, setActiveChannel, channel]);
 
     const DirectPreview = () => {
         const members = Object.values(channel.state.members).filter(({user})=>user.id !== client.userID)  

@@ -33,7 +33,7 @@ const ChatPage =({params}) => {
     }
     localStorage.setItem('initial',true)
     
-  }, [token, guestSession.id, guestSession.image, guestSession.name, guestSession.streamtoken, params.userid, session.user.image, session.user.name])
+  }, [token, guestSession.id, guestSession.image, guestSession.name, guestSession.streamtoken, params.userid, session?.user?.image, session?.user?.name])
   
   
 

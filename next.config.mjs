@@ -6,8 +6,10 @@ const nextConfig = {
       return config;
     },
     images: {
-      remotePatterns: [{hostname:'lh3.googleusercontent.com'}],
+      remotePatterns: [{hostname:'lh3.googleusercontent.com'},{hostname:'images.unsplash.com'}],
+      domains:[]
     },
+    
   };
 
 export default nextConfig;
