@@ -27,9 +27,9 @@ const ChannelListContainer = () => {
 
   return (
     <div className='w-full'>
-      <div className='ring-2 ring-slate-200 w-full relative'>
+      <div className='ring-2 ring-slate-200 w-full relative bg-white'>
         <ChannelSearch/>
-        <div className='w-full'>
+        <div className='w-full bg-white'>
         <ChannelList
           filters={channelQuery?filter:{members: { $in: [client.userID] }}}
           channelRenderFilterFn={customChannelMessagingFilter}
