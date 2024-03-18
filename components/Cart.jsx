@@ -132,7 +132,7 @@ export default function Cart() {
                         <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
                         <div className="mt-6">
                             <button
-                            onClick={handleCheckout}
+                            onClick={cartItems.length && handleCheckout}
                             className="flex w-full items-center justify-center rounded-md border border-transparent bg-pink-200 px-6 py-3 text-base font-medium text-black shadow-sm hover:bg-pink-300"
                             >
                             Checkout
