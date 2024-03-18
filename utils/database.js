@@ -2,11 +2,7 @@ import bcrypt from 'bcrypt';
 import {Pool} from 'pg';
 import crypto from 'crypto'
 const db = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'Arto',
-    password: '683754',
-    port: 5432,
+    connectionString:'postgres://postgres.iqcfagvphwzdefttsyfe:(LsU/4ZZDffpYtx@aws-0-ap-southeast-1.pooler.supabase.com:5432/postgres'
 });
 
 async function getUserById(id) {
@@ -55,14 +51,16 @@ async function updateUserLastLogin(userId,imageURL) {
     }
 }
 
-async function createNewListing(title, description, price, category, imgUrls, username,qtyavail) {
+async function createNewListing(title, description, price, category, imgUrls, username,qtyavail,productid) {
+  const productId = crypto.randomBytes(4).toString('hex');
   try {
     const base64Images = imgUrls.map(base64String => {
       const paddedBase64String = padBase64(base64String);
       return paddedBase64String;
     });
+    
 
-    await db.query('INSERT INTO listings (title, description, price, category, imgurls, author,qtyavail) VALUES ($1, $2, $3, $4, $5, $6,$7)', [title, description, price, category, base64Images, username,qtyavail]);
+    await db.query('INSERT INTO listings (title, description, price, category, imgurls, author,qtyavail) VALUES ($1, $2, $3, $4, $5, $6,$7,$8)', [title, description, price, category, base64Images, username,qtyavail,productId]);
     console.log('New listing inserted successfully.');
   } catch (error) {
     console.error('Error inserting new listing:', error);
