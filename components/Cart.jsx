@@ -85,7 +85,8 @@ export default function Cart() {
                                     <Image
                                         src={product.imageSrc}
                                         alt={product.imageAlt}
-                                        fill={true}
+                                        height={96}
+                                        width={96}
                                         className="h-full w-full object-cover object-center"
                                     />
                                     </div>

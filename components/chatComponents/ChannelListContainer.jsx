@@ -26,7 +26,7 @@ const ChannelListContainer = () => {
   }, [channelQuery,client.userID])
 
   return (
-    <div className='w-full'>
+    <div className='w-full bg-white'>
       <div className='ring-2 ring-slate-200 w-full relative bg-white'>
         <ChannelSearch/>
         <div className='w-full bg-white'>

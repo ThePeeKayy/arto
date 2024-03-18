@@ -11,7 +11,7 @@ import { useStateContext } from '../context/StateContext'
 const Hero = () => {
   const {handleGuestMode,guestSession} = useStateContext()
   return (
-    <div className="px-8 ml-4 sm:ml-0">
+    <div className="px-8 sm:max-w-screen max-w-[80vw] ml-4 sm:ml-0">
         <div className="relative isolate">
           <svg
             className="absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-gray-300 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"

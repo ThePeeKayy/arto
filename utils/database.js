@@ -1,9 +1,9 @@
 import bcrypt from 'bcrypt';
 import {Pool} from 'pg';
 import crypto from 'crypto'
-const encodedPassword = encodeURIComponent('(LsU/4ZZDffpYtx');
+const encodedPassword = encodeURIComponent(process.env.POSTGRES_PASSWORD)
 const db = new Pool({
-    connectionString:`postgres://postgres.iqcfagvphwzdefttsyfe:${encodedPassword}@aws-0-ap-southeast-1.pooler.supabase.com:5432/nextmarket`
+    connectionString:`postgres://postgres.iqcfagvphwzdefttsyfe:${encodedPassword}@aws-0-ap-southeast-1.pooler.supabase.com:5432/postgres`
 });
 
 async function getUserById(id) {
@@ -52,8 +52,8 @@ async function updateUserLastLogin(userId,imageURL) {
     }
 }
 
-async function createNewListing(title, description, price, category, imgUrls, username,qtyavail,productid) {
-  const productId = crypto.randomBytes(4).toString('hex');
+async function createNewListing(title, description, price, category, imgUrls, username,qtyavail) {
+  const productId = crypto.randomBytes(2).toString('hex');
   try {
     const base64Images = imgUrls.map(base64String => {
       const paddedBase64String = padBase64(base64String);
@@ -61,7 +61,7 @@ async function createNewListing(title, description, price, category, imgUrls, us
     });
     
 
-    await db.query('INSERT INTO listings (title, description, price, category, imgurls, author,qtyavail) VALUES ($1, $2, $3, $4, $5, $6,$7,$8)', [title, description, price, category, base64Images, username,qtyavail,productId]);
+    await db.query('INSERT INTO listings (title, description, price, category, imgurls, author,qtyavail,productid) VALUES ($1, $2, $3, $4, $5, $6,$7,$8)', [title, description, price, category, base64Images, username,qtyavail,productId]);
     console.log('New listing inserted successfully.');
   } catch (error) {
     console.error('Error inserting new listing:', error);
