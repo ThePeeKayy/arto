@@ -42,14 +42,14 @@ const Hero = () => {
             aria-hidden="true"
           >
             <div
-              className="aspect-[801/1036] w-[50.0625rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
+              className="aspect-[801/1036] max-w-[50.0625rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
               style={{
                 clipPath:
                   'polygon(63.1% 29.5%, 100% 17.1%, 76.6% 3%, 48.4% 0%, 44.6% 4.7%, 54.5% 25.3%, 59.8% 49%, 55.2% 57.8%, 44.4% 57.2%, 27.8% 47.9%, 35.1% 81.5%, 0% 97.7%, 39.2% 100%, 35.2% 81.4%, 97.2% 52.8%, 63.1% 29.5%)',
               }}
             />
           </div>
-          <div className="overflow-hidden">
+          <div className="flex flex-nowrap overflow-hidden">
             <div className="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
               <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                 <div className="relative w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
@@ -60,7 +60,7 @@ const Hero = () => {
                   Whether you seek captivating paintings, mesmerizing sculptures, or intricate digital artworks, our curated collection promises to transport you to a universe where art knows no bounds. 
                   </p>
                   {/* GuestButton */}
-                  <div className='ml-4 bg-white border-slate-300 border-[1px] shadow-lg p-4 rounded-xl mt-6 w-[70%]'>
+                  <div className='ml-4 bg-white border-slate-300 border-[1px] shadow-lg p-4 rounded-xl mt-6 w-[66%]'>
                     <p className='font-bold text-md'>Guest Login Button: Not all features will be available.</p>
                     <label className="inline-flex items-center cursor-pointer mt-4" >
                         <input onChange={handleGuestMode} type="checkbox" checked={guestSession}  className="sr-only peer"/>
