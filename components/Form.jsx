@@ -205,8 +205,8 @@ const cropImage = (imageUrl, callback) => {
 
                     
                 </div>
-                <div className='w-full  h-[80%] mt-0 sm:mt-3 sm:mr-3 mr-0 space-y-5'>
-                    <div className=" min-w-[390px] bg-white rounded-xl shadow-md p-7" onDragOver={handleDragOver} onDrop={handleDrop}>
+                <div className='sm:w-full h-[80%] mt-0 sm:mt-3 sm:mr-3 mr-0 space-y-5'>
+                    <div className=" sm:min-w-[390px] min-w-[30vw] bg-white rounded-xl shadow-md p-7" onDragOver={handleDragOver} onDrop={handleDrop}>
                         <label className="block text-sm font-medium leading-6 text-gray-900">
                             Photo
                         </label>
