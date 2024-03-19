@@ -26,7 +26,7 @@ const Nav = () => {
     const [providers, setProviders] = useState(null);
     const [dropDown,setDropDown] =useState(false)
     const [menuOpen,setMenuOpen] =useState(false)
-    const {category, setCategory,query, setQuery,showCart,setShowCart, guestSession} = useStateContext()
+    const {category, setCategory,query, setQuery,showCart,setShowCart, guestSession, handleGuestMode} = useStateContext()
     const router = useRouter()
     useEffect(()=>{
         const setUpProviders = async () => {
@@ -52,7 +52,7 @@ const Nav = () => {
                     <p className='text-[75px] font-grunge'><span className='text-transparent md:text-black'>rto</span></p>
                 </Link>
             </div>
-            <div className='w-[40%] min-w-[255px] ml-[55px] md:ml-[90px]'>
+            <div className='w-[40%] min-w-[265px] ml-[55px] md:ml-[80px]'>
         
                 <div className="mt-3 flex rounded- shadow- w-full h-[70px] relative">
                     <div className="relative flex flex-grow-[5] items-stretch focus-within:z-10">
@@ -101,7 +101,7 @@ const Nav = () => {
                     <div onClick={()=>setShowCart(true)} className='bg-white ring-1 ring-inset ring-gray-300 text-gray-600 font-bold h-[70px] w-[70px] rounded-[70px] p-6 flex-0.5 flex justify-center flex-row flex-nowrap'><TiShoppingCart size={30}/></div>
                     <button 
                         className='bg-white ring-1 ring-inset ring-gray-300 text-gray-600 font-bold h-[70px] min-w-[70px] w-[105%] rounded-[70px]  flex flex-0.5 flex-row flex-nowrap justify-center gap-1' 
-                        onClick={handleSignOut}
+                        onClick={guestSession?handleGuestMode:handleSignOut}
                     ><span className='pt-6 2xl:block hidden'>Signout</span><FaSignOutAlt className='mt-7'/></button>
                     <Link href={session?`/profile/${session.user.id}`:'/profile/0c62a4358e1b4c969ffe2d041646f78a'}>
                     <div style={{width: 68, height: 68, position: 'relative', overflow: 'hidden', borderRadius: '50%' }}>
@@ -130,34 +130,34 @@ const Nav = () => {
                                             />
                                         </div>
                                     </Link>
-                                    <span className="font-bold ml-2">Profile</span>
+                                    <span onClick={()=>router.push(session?`/profile/${session.user.id}`:'/profile/0c62a4358e1b4c969ffe2d041646f78a')} className="font-bold ml-2">Profile</span>
                                 </div>
                                 <div className="flex items-center">
                                     <Link className='bg-white ring-1 ring-inset ring-gray-300 text-gray-600 font-bold h-[70px] w-[70px] rounded-[70px] p-6 flex-0.5 flex justify-center flex-row flex-nowrap' href={session?`/chat/${session.user.id}`:'/chat/0c62a4358e1b4c969ffe2d041646f78a'}>
                                         <CiChat1 className='pb-[6px]' size={30} />
                                     </Link>
-                                    <span className="font-bold ml-2">Chat</span>
+                                    <span onClick={()=>router.push(session?`/chat/${session.user.id}`:'/chat/0c62a4358e1b4c969ffe2d041646f78a')} className="font-bold ml-2">Chat</span>
                                 </div>
                                 <div className="flex items-center">
                                     <Link onClick={guestSession ? ()=>toast.error('Only available with real account'):()=>{}} className='bg-white ring-1 ring-inset ring-gray-300 text-gray-600 font-bold h-[70px] w-[70px] rounded-[70px] p-6 flex-0.5 flex justify-center flex-row' href={session?"/create-post":'/'}>
                                         <IoMdAddCircle className='pb-[6px]' size={30}/>
                                     </Link>
-                                    <span className="font-bold ml-2">Create Post</span>
+                                    <span onClick={()=>{session && router.push('/create-post')}} className="font-bold ml-2">Create Post</span>
                                 </div>
                                 <div className="flex items-center">
                                     <div onClick={()=>setShowCart(true)} className='bg-white ring-1 ring-inset ring-gray-300 text-gray-600 font-bold h-[70px] w-[70px] rounded-[70px] p-6 flex-0.5 flex justify-center flex-row flex-nowrap'>
                                         <TiShoppingCart size={30}/>
                                     </div>
-                                    <span className="font-bold ml-2">Shopping Cart</span>
+                                    <span onClick={()=>setShowCart(true)} className="font-bold ml-2">Shopping Cart</span>
                                 </div>
                                 <div className="flex items-center">
                                     <button 
                                         className='bg-white ring-1 ring-inset ring-gray-300 text-gray-600 font-bold h-[70px] w-[70px] rounded-[70px] p-7 flex-0.5 flex justify-center flex-row flex-nowrap' 
-                                        onClick={handleSignOut}
+                                        onClick={guestSession?handleGuestMode:handleSignOut}
                                     >
                                         <FaSignOutAlt/>
                                     </button>
-                                    <span className="font-bold ml-2">Logout</span>
+                                    <span onClick={guestSession?handleGuestMode:handleSignOut} className="font-bold ml-2">Logout</span>
                                 </div>
                             </div>
                     </div>}
@@ -177,13 +177,13 @@ const Nav = () => {
                                             className='bg-white ring-1 ring-inset ring-gray-300 text-gray-600 font-bold h-[70px] w-[70px] rounded-[70px] p-6 flex-0.5 flex justify-center flex-row flex-nowrap'
                                             ><span className='text-sm'><PiSignIn size={30} /></span>
                                         </button>))}
-                                        <span className="font-bold ml-2">Sign In</span>
+                                        <span onClick={()=>signIn(providers[0].id)} className="font-bold ml-2">Sign In</span>
                                     </div>
                                     <div className="flex items-center">
                                         <div onClick={()=>setShowCart(true)} className='bg-white ring-1 ring-inset ring-gray-300 text-gray-600 font-bold h-[70px] w-[70px] rounded-[70px] p-6 flex-0.5 flex justify-center flex-row flex-nowrap'>
                                             <TiShoppingCart size={30}/>
                                         </div>
-                                        <span className="font-bold ml-2">Shopping Cart</span>
+                                        <span onClick={()=>setShowCart(true)} className="font-bold ml-2">Shopping Cart</span>
                                     </div>
                                     
                                 </div>
