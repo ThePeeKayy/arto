@@ -62,7 +62,7 @@ const PopularProducts = () => {
         </div>
         
         <div className='relative flex justify-center items-center flex-col overflow-hidden'>
-          <div className='xl:h-[54vw] md:h-[70vw] h-[220vw] flex flex-row'>
+          <div className='xl:h-[54vw] md:h-[70vw] h-[250vw] flex flex-row'>
           <button disabled={currentPage === 0} onClick={!isTransitioning ? handlePrevPage:()=>{}}><FaAngleLeft size={40} className='rounded-full'/></button>
 
             <div style={{
@@ -75,7 +75,7 @@ const PopularProducts = () => {
             <button disabled={currentPage === totalPages - 1} onClick={!isTransitioning ? handleNextPage:()=>{}}><FaAngleRight size={40} className='rounded-full' /></button>
 
           </div>
-          <div className='flex items-center justify-center flex-row w-[30%] md:mt-8 mt-[95px] '>
+          <div className='flex items-center justify-center flex-row w-[30%] md:mt-8 mt-[100px] '>
             <span className=" font-bold gap-2 px-12 h-8 text-[20px]">{currentPage + 1}/{totalPages === 0 ? 1 : totalPages}</span>
           </div>
         </div>
