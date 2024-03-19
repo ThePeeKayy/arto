@@ -15,6 +15,8 @@ import { GoSortDesc } from "react-icons/go";
 import { FaSignOutAlt } from "react-icons/fa";
 import { CiChat1} from "react-icons/ci";
 import { TiShoppingCart } from "react-icons/ti";
+import { PiSignIn } from "react-icons/pi";
+
 import { useRouter } from 'next/navigation'
 import Cart from './Cart'
 import toast from 'react-hot-toast'
@@ -163,14 +165,39 @@ const Nav = () => {
                 </>
                 ):(
                     <div className='mt-3 mr-[10px] ml-2 flex flex-row gap-2'>
+                        <button onClick={()=>setMenuOpen(true)} className='lg:hidden bg-white ring-1 ring-inset ring-gray-300 text-gray-600 font-bold h-[70px] w-[70px] rounded-[70px] p-6 flex-0.5 flex justify-center flex-row flex-nowrap'><IoMenu size={30}/></button>
+                        {menuOpen && <div className="fixed z-20 inset-0 overflow-y-auto flex items-start justify-end m-6">
+                            <div className="fixed inset-0 bg-black opacity-25" onClick={()=>setMenuOpen(false)}/>
+                            <div className="bg-white flex flex-col gap-y-2 opacity-full p-6 rounded-lg w-[300px] h-[430px] shadow-lg z-10">
+                                    <div className="flex items-center">
+                                    {providers && Object.values(providers).map((provider) => (<button
+                                            type='button'
+                                            key={provider.name}
+                                            onClick={()=>signIn(provider.id)}
+                                            className='bg-white ring-1 ring-inset ring-gray-300 text-gray-600 font-bold h-[70px] w-[150%] max-w-[200px] rounded-[57px] pb-1'
+                                            ><span className='text-sm'><PiSignIn size={30} /></span>
+                                        </button>))}
+                                        <span className="font-bold ml-2">Sign In</span>
+                                    </div>
+                                    <div className="flex items-center">
+                                        <div onClick={()=>setShowCart(true)} className='bg-white ring-1 ring-inset ring-gray-300 text-gray-600 font-bold h-[70px] w-[70px] rounded-[70px] p-6 flex-0.5 flex justify-center flex-row flex-nowrap'>
+                                            <TiShoppingCart size={30}/>
+                                        </div>
+                                        <span className="font-bold ml-2">Shopping Cart</span>
+                                    </div>
+                                    
+                                </div>
+                        </div>}
+                        <div className='hidden lg:block'>
                         {providers && Object.values(providers).map((provider) => (<button
                             type='button'
                             key={provider.name}
                             onClick={()=>signIn(provider.id)}
                             className='bg-white ring-1 ring-inset ring-gray-300 text-gray-600 font-bold h-[70px] w-[150%] max-w-[200px] rounded-[57px] pb-1'
-                            ><span className='text-sm'>Sign In</span>
-                        </button>))}
+                            ><span className='text-sm'><PiSignIn size={30} /></span>
+                            </button>))}
                         <div onClick={()=>setShowCart(true)} className='bg-white ring-1 ring-inset ring-gray-300 text-gray-600 font-bold h-[70px] w-[70px] rounded-[70px] p-6 flex-0.5 flex justify-center flex-row flex-nowrap'><TiShoppingCart size={30}/></div>
+                        </div>
                     </div>
                 )}
             </div>

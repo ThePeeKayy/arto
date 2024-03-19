@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-between">
       <div className="z-1 px-6 ">
-        <div className="flex md:justify-start justify-center">
+        <div className="flex xl:justify-start justify-center">
         <HeroBanner/>
         </div>
         <div className="p-24">
