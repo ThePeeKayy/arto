@@ -118,7 +118,7 @@ const cropImage = (imageUrl, callback) => {
                                     name="desc"
                                     value={listing.description}
                                     id="title"
-                                    className="align-top h-[10vw] md:h-[17vw] xl:h-[23vw] pb-[10%] md:pb-[50%] xl:pb-[70%] block flex-1 border-0 bg-transparent pl-1 text-gray-900  placeholder:text-gray-400 sm:text-sm sm:leading-6 "
+                                    className="break-all align-top h-[10vw] md:h-[17vw] xl:h-[23vw] pb-[10%] md:pb-[50%] xl:pb-[70%] block flex-1 border-0 bg-transparent pl-1 text-gray-900  placeholder:text-gray-400 sm:text-sm sm:leading-6 "
                                     placeholder="(Write desc here)"
                                     onChange={(event)=>setListing({...listing, description:event.target.value})}
                                 />
