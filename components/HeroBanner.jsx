@@ -37,8 +37,9 @@ const Hero = () => {
             </svg>
             <rect width="100%" height="100%" strokeWidth={0} fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)" />
           </svg>
+          {/* overflowhidden */}
           <div
-            className="absolute left-1/2 right-0 top-0 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48"
+            className="absolute left-1/2 right-0 top-0 -z-10 -ml-24 transform-gpu blur-3xl lg:ml-24 xl:ml-48"
             aria-hidden="true"
           >
             <div
@@ -49,7 +50,8 @@ const Hero = () => {
               }}
             />
           </div>
-          <div className="flex flex-nowrap overflow-hidden">
+          {/* overflowhidden */}
+          <div className="flex flex-wrap">
             <div className="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
               <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                 <div className="relative w-full max-w-xl lg:shrink-0 xl:max-w-2xl">

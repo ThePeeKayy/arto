@@ -39,10 +39,10 @@ const ChannelInner = () => {
     <GiphyContext.Provider value={{ giphyState, setGiphyState }}>
       <div style={{background:'white', display: 'flex', width: '100%' }}>
         <Window>
-          <div className='h-[12vh]'>
+          <div className='h-[12vh] z-20'>
             <TeamChannelHeader setOffered={setOffered} />
           </div>
-          <div className='h-[66vh] overflow-auto'>
+          <div className='h-[65vh] overflow-auto z-10'>
             <MessageList />
           </div>
           <div className='h-[9vh] flex flex-row'>
