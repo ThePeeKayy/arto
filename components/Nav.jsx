@@ -50,7 +50,7 @@ const Nav = () => {
                     <p className='text-[75px] font-grunge'><span className='text-transparent md:text-black'>rto</span></p>
                 </Link>
             </div>
-            <div className='w-[40%] min-w-[360px] ml-[55px] md:ml-[120px]'>
+            <div className='w-[40%] min-w-[320px] ml-[55px] md:ml-[90px]'>
         
                 <div className="mt-3 flex rounded- shadow- w-full h-[70px] relative">
                     <div className="relative flex flex-grow-[5] items-stretch focus-within:z-10">
