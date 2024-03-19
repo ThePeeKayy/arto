@@ -52,7 +52,7 @@ const Nav = () => {
                     <p className='text-[75px] font-grunge'><span className='text-transparent md:text-black'>rto</span></p>
                 </Link>
             </div>
-            <div className='w-[40%] min-w-[265px] ml-[55px] md:ml-[80px]'>
+            <div className='w-[40%] min-w-[285px] ml-[55px] md:ml-[70px]'>
         
                 <div className="mt-3 flex rounded- shadow- w-full h-[70px] relative">
                     <div className="relative flex flex-grow-[5] items-stretch focus-within:z-10">
@@ -169,15 +169,17 @@ const Nav = () => {
                         {menuOpen && <div className="fixed z-20 inset-0 overflow-y-auto flex items-start justify-end m-6">
                             <div className="fixed inset-0 bg-black opacity-25" onClick={()=>setMenuOpen(false)}/>
                             <div className="bg-white flex flex-col gap-y-2 opacity-full p-6 rounded-lg w-[300px] h-[190px] shadow-lg z-10">
-                                    <div className="flex items-center">
-                                    {providers && Object.values(providers).map((provider) => (<button
+                                <div className="flex items-center">
+                                    {providers && Object.values(providers).map((provider) => (<div className='flex items-center flex-row' onClick={()=>signIn(provider.id)}><button
                                             type='button'
                                             key={provider.name}
                                             onClick={()=>signIn(provider.id)}
                                             className='bg-white ring-1 ring-inset ring-gray-300 text-gray-600 font-bold h-[70px] w-[70px] rounded-[70px] p-6 flex-0.5 flex justify-center flex-row flex-nowrap'
-                                            ><span className='text-sm'><PiSignIn size={30} /></span>
-                                        </button>))}
+                                            ><PiSignIn size={30} />
+                                        </button>
                                         <span onClick={()=>signIn(providers[0].id)} className="font-bold ml-2">Sign In</span>
+                                        </div>))}
+                                        
                                     </div>
                                     <div className="flex items-center">
                                         <div onClick={()=>setShowCart(true)} className='bg-white ring-1 ring-inset ring-gray-300 text-gray-600 font-bold h-[70px] w-[70px] rounded-[70px] p-6 flex-0.5 flex justify-center flex-row flex-nowrap'>
