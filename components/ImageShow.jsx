@@ -35,7 +35,7 @@ const ImageShow = ({imgUrls,setImgUrls, currentImages}) => {
     <div className='flex flex-col gap-5'>
     <div className='flex items-center flex-col bg-white rounded-xl shadow-md p-7 sm:min-w-[390px] min-h-[380px] h-[45vw] gap-2'>
         <p className='pb-5'>Images</p>
-        <div className= {`sm:w-[33vw] h-[33vw]  sm:min-w-[240px] min-h-[240px] relative rounded-lg bg-yellow-50 flex justify-center items-center`}>
+        <div className= {`sm:w-[33vw] h-[33vw]  sm:min-w-[240px] sm:min-h-[240px] min-w-[170px] min-h-[170px] relative rounded-lg bg-yellow-50 flex justify-center items-center`}>
             
             {imgUrls.length > currentId ? <Image src={imgUrls[currentId]} alt='Image' fill={true} objectFit='cover'/>:<></>}
         </div>
