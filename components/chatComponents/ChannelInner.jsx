@@ -105,7 +105,7 @@ const TeamChannelHeader = ({setOffered}) => {
                   <p className='font-bold whitespace-nowrap'>{channel.data.title}</p>
                   <p className={watcher_count !== 2?'text-slate-200':'text-slate-400'}>{getWatcherText(watcher_count)}</p>
                 </div>
-                {channel?.data?.offer && <p className='text-slate-400 whitespace-nowrap text-[20px] px-[30%] py-[11px]'>Accepted offer of ${channel.data.offer}</p>}
+                {channel?.data?.offer && <p className='text-slate-400 whitespace-nowrap text-[20px] px-[5%] sm:px-[30%] py-[11px]'>Accepted offer of ${channel.data.offer}</p>}
               </div>
             ))}
   
