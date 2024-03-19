@@ -33,14 +33,14 @@ const ImageShow = ({imgUrls,setImgUrls, currentImages}) => {
 
   return (
     <div className='flex flex-col gap-5'>
-    <div className='flex items-center flex-col bg-white rounded-xl shadow-md p-7 sm:min-w-[390px] min-h-[380px] h-[45vw] gap-2'>
+    <div className='flex items-center flex-col bg-white rounded-xl shadow-md p-7 md:min-w-[390px] min-h-[380px] h-[45vw] gap-2'>
         <p className='pb-5'>Images</p>
-        <div className= {`sm:w-[33vw] h-[33vw]  sm:min-w-[240px] sm:min-h-[240px] min-w-[170px] min-h-[170px] relative rounded-lg bg-yellow-50 flex justify-center items-center`}>
+        <div className= {`md:w-[33vw] h-[33vw]  md:min-w-[240px] md:min-h-[240px] min-w-[170px] min-h-[170px] relative rounded-lg bg-yellow-50 flex justify-center items-center`}>
             
             {imgUrls.length > currentId ? <Image src={imgUrls[currentId]} alt='Image' fill={true} objectFit='cover'/>:<></>}
         </div>
     </div>
-    <div className='flex flex-row items-center gap-5 bg-white rounded-xl shadow-md p-5 sm:min-w-[390px] h-[120px]'>
+    <div className='flex flex-row items-center gap-5 bg-white rounded-xl shadow-md p-5 md:min-w-[390px] h-[120px]'>
     <p className='font-bold'>All Images:</p>
       
       {imgUrls.length ? imgUrls.map((imgUrl,index)=>(
