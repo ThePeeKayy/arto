@@ -55,10 +55,10 @@ const Hero = () => {
             <div className="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
               <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                 <div className="relative w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
-                  <h1 className="sm:ml-4 ml-[-10px] text-6xl flex flex-wrap max-w-[89vw] font-bold tracking-tight text-gray-900 sm:text-5xl">
+                  <h1 className="sm:ml-4 ml-[-22px] text-6xl flex flex-wrap max-w-[89vw] font-bold tracking-tight text-gray-900 sm:text-5xl">
                   Explore and Sell Art Creations
                   </h1>
-                  <p className="mt-6 sm:ml-4 ml-[-10px] text-lg flex flex-wrap max-w-[89vw] leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
+                  <p className="mt-6 sm:ml-4 ml-[-22px] text-lg flex flex-wrap max-w-[89vw] leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
                   Whether you seek captivating paintings, mesmerizing sculptures, or intricate digital artworks, our curated collection promises to transport you to a universe where art knows no bounds. 
                   </p>
                   {/* GuestButton */}
