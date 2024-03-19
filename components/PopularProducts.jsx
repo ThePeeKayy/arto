@@ -75,7 +75,7 @@ const PopularProducts = () => {
             <button disabled={currentPage === totalPages - 1} onClick={!isTransitioning ? handleNextPage:()=>{}}><FaAngleRight size={40} className='rounded-full' /></button>
 
           </div>
-          <div className='flex items-center justify-center flex-row w-[30%] mt-16 '>
+          <div className='flex items-center justify-center flex-row w-[30%] md:mt-8 mt-[95px] '>
             <span className=" font-bold gap-2 px-12 h-8 text-[20px]">{currentPage + 1}/{totalPages === 0 ? 1 : totalPages}</span>
           </div>
         </div>
