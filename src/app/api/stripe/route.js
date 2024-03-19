@@ -33,8 +33,8 @@ export const POST = async (req, res) => {
           }
         }),
         mode: 'payment',
-        success_url: 'http://localhost:3000',
-        cancel_url: 'http://localhost:3000',
+        success_url: 'https://arto-lac.vercel.app/',
+        cancel_url: 'https://arto-lac.vercel.app/',
         automatic_tax: { enabled: true },
       }
       const session = await stripe.checkout.sessions.create(params);

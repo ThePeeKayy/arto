@@ -11,7 +11,7 @@ import { useStateContext } from '../context/StateContext'
 const Hero = () => {
   const {handleGuestMode,guestSession} = useStateContext()
   return (
-    <div className="sm:max-w-screen max-w-[91vw] ml-4 sm:ml-0">
+    <div className="sm:max-w-[100vw] max-w-[88vw] ml-4 sm:ml-0">
         <div className="relative isolate">
           <svg
             className="absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-gray-300 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
@@ -53,10 +53,10 @@ const Hero = () => {
             <div className="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
               <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                 <div className="relative w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
-                  <h1 className="ml-4 text-6xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+                  <h1 className="ml-4 text-6xl flex flex-wrap max-w-[89vw] font-bold tracking-tight text-gray-900 sm:text-5xl">
                   Explore and Sell Art Creations
                   </h1>
-                  <p className="mt-6 ml-4 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
+                  <p className="mt-6 ml-4 text-lg flex flex-wrap max-w-[89vw] leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
                   Whether you seek captivating paintings, mesmerizing sculptures, or intricate digital artworks, our curated collection promises to transport you to a universe where art knows no bounds. 
                   </p>
                   {/* GuestButton */}

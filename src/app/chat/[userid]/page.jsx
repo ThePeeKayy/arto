@@ -38,7 +38,7 @@ const ChatPage =({params}) => {
   
 
   return (
-    <div className='flex w-full relative bg-white'>
+    <div className='flex w-full relative bg-white h-[89vh]'>
       {(guestSession || session) && <Chat client={client} theme=''>
         <div className="flex-grow-0 flex-shrink-0 border-[2px] border-grey-50  bg-white">
           <ChannelListContainer />

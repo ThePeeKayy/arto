@@ -39,11 +39,13 @@ const ChannelInner = () => {
     <GiphyContext.Provider value={{ giphyState, setGiphyState }}>
       <div style={{background:'white', display: 'flex', width: '100%' }}>
         <Window>
+          <div className='h-[89vh]'>
           <TeamChannelHeader setOffered={setOffered} />
           <MessageList />
           <div className='flex flex-row'>
             <MessageInput overrideSubmitHandler={overrideSubmitHandler} />
             {!offered && activeAuthor !== session?.user?.name && <button onClick={()=>setModal(true)} className='bg-pink-100 rounded-lg mt-2 mr-7 w-28 h-[57px] font-bold'>Offer</button>}
+          </div>
           </div>
         </Window>
         {modal && <Modal setModal={setModal} />}

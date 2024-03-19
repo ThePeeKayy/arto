@@ -18,7 +18,7 @@ const TeamChannelList = ({children, loading}) => {
   }
 
   return (
-    <div className={`bg-white h-[100vh] sm:w-[24vw] ${isPreviewing?'w-[100vw]':'sm:block hidden'} pt-[9vh]`}>
+    <div className={`bg-white h-[89vh] sm:w-[24vw] ${isPreviewing?'w-[100vw]':'sm:block hidden'} pt-[9vh]`}>
         <div>
           <p className="px-5 py-3 text-[23px] font-bold text-black">
             My Chats
