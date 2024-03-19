@@ -6,7 +6,7 @@ const TeamChannelList = ({children, loading}) => {
   const {isPreviewing} = useStateContext()
   if (loading) {
     return (
-      <div className=" bg-white sm:w-[24vw] w-[100vw] mt-[9vh]">
+      <div className=" bg-white h-[89vh] sm:w-[24vw] w-[100vw] mt-[9vh]">
           <div>
             <p className="px-5 py-3 text-[23px] font-bold text-white">
               loading...
