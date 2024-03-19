@@ -62,7 +62,7 @@ const Hero = () => {
                   Whether you seek captivating paintings, mesmerizing sculptures, or intricate digital artworks, our curated collection promises to transport you to a universe where art knows no bounds. 
                   </p>
                   {/* GuestButton */}
-                  <div className='ml-4 bg-white border-slate-300 border-[1px] shadow-lg p-4 rounded-xl mt-6 w-[66%]'>
+                  <div className='ml-4 bg-white border-slate-300 border-[1px] shadow-lg p-4 rounded-xl mt-6 sm:w-[66%] w-[40%]'>
                     <p className='font-bold text-md'>Guest Login Button: Not all features will be available.</p>
                     <label className="inline-flex items-center cursor-pointer mt-4" >
                         <input onChange={handleGuestMode} type="checkbox" checked={guestSession}  className="sr-only peer"/>
