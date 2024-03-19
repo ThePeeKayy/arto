@@ -174,7 +174,7 @@ const Nav = () => {
                                             type='button'
                                             key={provider.name}
                                             onClick={()=>signIn(provider.id)}
-                                            className='bg-white ring-1 ring-inset ring-gray-300 text-gray-600 font-bold h-[70px] w-[150%] max-w-[200px] rounded-[57px] pb-1'
+                                            className='bg-white ring-1 ring-inset ring-gray-300 text-gray-600 font-bold h-[70px] w-[70px] rounded-[70px] p-6 flex-0.5 flex justify-center flex-row flex-nowrap'
                                             ><span className='text-sm'><PiSignIn size={30} /></span>
                                         </button>))}
                                         <span className="font-bold ml-2">Sign In</span>
@@ -193,7 +193,7 @@ const Nav = () => {
                             type='button'
                             key={provider.name}
                             onClick={()=>signIn(provider.id)}
-                            className='bg-white ring-1 ring-inset ring-gray-300 text-gray-600 font-bold h-[70px] w-[150%] max-w-[200px] rounded-[57px] pb-1'
+                            className='bg-white ring-1 ring-inset ring-gray-300 text-gray-600 font-bold h-[70px] w-[160px] rounded-[57px] pb-1'
                             ><span className='text-sm'>Sign</span>
                             </button>))}
                         <div onClick={()=>setShowCart(true)} className='bg-white ring-1 ring-inset ring-gray-300 text-gray-600 font-bold h-[70px] w-[70px] rounded-[70px] p-6 flex-0.5 flex justify-center flex-row flex-nowrap'><TiShoppingCart size={30}/></div>
