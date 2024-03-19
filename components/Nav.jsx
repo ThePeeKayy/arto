@@ -170,9 +170,8 @@ const Nav = () => {
                             <div className="fixed inset-0 bg-black opacity-25" onClick={()=>setMenuOpen(false)}/>
                             <div className="bg-white flex flex-col gap-y-2 opacity-full p-6 rounded-lg w-[300px] h-[190px] shadow-lg z-10">
                                 <div className="flex items-center">
-                                    {providers && Object.values(providers).map((provider) => (<div className='flex items-center flex-row' onClick={()=>signIn(provider.id)}><button
+                                    {providers && Object.values(providers).map((provider) => (<div key={provider.name} className='flex items-center flex-row' onClick={()=>signIn(provider.id)}><button
                                             type='button'
-                                            key={provider.name}
                                             onClick={()=>signIn(provider.id)}
                                             className='bg-white ring-1 ring-inset ring-gray-300 text-gray-600 font-bold h-[70px] w-[70px] rounded-[70px] p-6 flex-0.5 flex justify-center flex-row flex-nowrap'
                                             ><PiSignIn size={30} />
