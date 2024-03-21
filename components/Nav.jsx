@@ -43,12 +43,11 @@ const Nav = () => {
       };
     if (typeof window !== 'undefined') {
       document.getElementById('searchInput').addEventListener('keypress', function(event) {
-        event.preventDefault();
         if (event.key === 'Enter') {
             setSearch(true)
             if (window.location.pathname !== '/search-post'){
-            event.preventDefault();
-            router.push('/search-post')}
+                event.preventDefault();
+                router.push('/search-post')}
         }
     })};
     
