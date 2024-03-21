@@ -43,7 +43,7 @@ const Nav = () => {
       };
     if (typeof window !== 'undefined') {
       document.getElementById('searchInput').addEventListener('keypress', function(event) {
-        if (event.key === 'Enter') {
+        if (event.key === 'Enter' && window.location.pathname !== '/search-post') {
             event.preventDefault();
             router.push('/search-post');
         }
@@ -62,7 +62,7 @@ const Nav = () => {
             </div>
             <div className='w-[35%] min-w-[285px] ml-[33px] md:ml-[70px]'>
         
-                <div className="mt-3 flex rounded- shadow- w-full h-[70px] relative">
+                <div className="mt-3 flex rounded- shadow- w-[75%] h-[70px] relative">
                     <div className="relative flex flex-grow-[5] items-stretch focus-within:z-10">
                         
                         <input
