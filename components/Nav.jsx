@@ -44,7 +44,7 @@ const Nav = () => {
     if (typeof window !== 'undefined') {
       document.getElementById('searchInput').addEventListener('keypress', function(event) {
         if (event.key === 'Enter') {
-            setSearch((prevState)=>!prevState)
+            ()=>setSearch((prevState)=>!prevState)
             if (window.location.pathname !== '/search-post'){
                 event.preventDefault();
                 router.push('/search-post')}

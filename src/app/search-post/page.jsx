@@ -28,7 +28,9 @@ const SearchedProducts = () => {
     setProducts(result)}
 
   useEffect(() => {
-    toast('Loading...')
+    toast('Loading...',{
+      duration:3000,
+    })
     fetchData()
   }, [search, category])
   
