@@ -55,14 +55,14 @@ const Nav = () => {
     return (
         <>
         {showCart && <Cart />}
-        <nav className='flex md:justify-between justify-evenly h-auto pb-2 sm:pr-0 pr-8 w-full relative' >
+        <nav className='flex md:justify-between justify-evenly h-auto pb-2 sm:pr-0 pr-10 w-full relative' >
             <div className='flex gap-2 ml-6 flex-center flex-row items-center'>
                 <Link href='/' className='flex flex-row absolute top-[-10px] left-4'>
                     <Image src={logo} width={35} height='auto' alt='logo' style={{objectFit: "contain"}}/>
                     <p className='text-[75px] font-grunge'><span className='text-transparent md:text-black'>rto</span></p>
                 </Link>
             </div>
-            <div className='w-[35%] min-w-[285px] ml-[72px] md:ml-[70px]'>
+            <div className='w-[35%] min-w-[285px] ml-[90px] md:ml-[70px]'>
         
                 <div className="mt-3 flex rounded- shadow- w-[85%] sm:w-full  h-[70px] relative">
                     <div className="relative flex flex-grow-[5] items-stretch focus-within:z-10">
@@ -126,7 +126,7 @@ const Nav = () => {
                         </div>
                     </Link>
                 </div>
-                <div className='flex gap-1 md:gap-2 mt-3 sm:mr-0 mr-4 lg:hidden justify-end '>
+                <div className='flex gap-1 md:gap-2 mt-3 sm:mr-2 mr-8 lg:hidden justify-end '>
                     <button onClick={()=>setMenuOpen(true)} className='bg-white ring-1 ring-inset ring-gray-300 text-gray-600 font-bold h-[70px] w-[70px] rounded-[70px] p-6 flex-0.5 flex justify-center flex-row flex-nowrap'><IoMenu size={30}/></button>
                     {menuOpen && <div className="fixed z-20 inset-0 overflow-y-auto flex items-start justify-end m-6">
                         <div className="fixed inset-0 bg-black opacity-25" onClick={()=>setMenuOpen(false)}/>
@@ -176,7 +176,7 @@ const Nav = () => {
                 </div>
                 </>
                 ):(
-                    <div className='mt-3 sm:mr-0 mr-4 flex flex-row gap-2'>
+                    <div className='mt-3 sm:mr-2 mr-8 flex flex-row gap-2'>
                         <button onClick={()=>setMenuOpen(true)} className='lg:hidden bg-white ring-1 ring-inset ring-gray-300 text-gray-600 font-bold h-[70px] w-[70px] rounded-[70px] p-6 flex-0.5 flex justify-center flex-row flex-nowrap'><IoMenu size={30}/></button>
                         {menuOpen && <div className="fixed z-20 inset-0 overflow-y-auto flex items-start justify-end m-6">
                             <div className="fixed inset-0 bg-black opacity-25" onClick={()=>setMenuOpen(false)}/>
