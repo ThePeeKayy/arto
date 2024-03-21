@@ -41,6 +41,15 @@ const Nav = () => {
         await signOut({ redirect: false }); 
         router.push('/');
       };
+
+      document.getElementById('searchInput').addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            router.push('/search-post')
+            event.target.value = '';
+            event.preventDefault();
+        }
+    });
+    
     
     return (
         <>
@@ -60,6 +69,7 @@ const Nav = () => {
                         <input
                             type="text"
                             value = {query}
+                            id='searchInput'
                             className="block w-full rounded-none rounded-l-[57px] py-1.5 pl-4 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                             placeholder="Search for products..."
                             onChange={(e)=>setQuery(e.target.value)}
@@ -80,7 +90,7 @@ const Nav = () => {
                     </button>
                     <button>
                         <Link href='/search-post'>
-                            <div className="flex items-center px-6 rounded-[57px] py-6 ml-3 ring-1 ring-inset ring-gray-300 bg-white">
+                            <div className="sm:flex hidden items-center px-6 rounded-[57px] py-6 ml-3 ring-1 ring-inset ring-gray-300 bg-white">
                                 <IoIosSearch className="h-5 w-5 text-gray-400" aria-hidden="true" />
                             </div>
                         </Link>
