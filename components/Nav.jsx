@@ -42,15 +42,14 @@ const Nav = () => {
         router.push('/');
       };
 
-    if (typeof window !== 'undefined') {
-      document.getElementById('searchInput').addEventListener('keypress', function(event) {
+    const handleEnter = (event) =>{
         if (event.key === 'Enter') {
             setSearch(true)
             if (window.location.pathname !== '/search-post'){
                 event.preventDefault();
                 router.push('/search-post')}
         }
-    })};
+    }
     
     
     return (
@@ -75,6 +74,7 @@ const Nav = () => {
                             className="block w-full rounded-none rounded-l-[57px] py-1.5 pl-4 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                             placeholder="Search for products..."
                             onChange={(e)=>setQuery(e.target.value)}
+                            onKeyDown={handleEnter}
                         />
                     </div>
                     <button

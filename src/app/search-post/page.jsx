@@ -28,11 +28,11 @@ const SearchedProducts = () => {
     setProducts(result)}
 
   useEffect(() => {
-    toast('Loading...',{
+    if(search){toast('Loading...',{
       duration:3000,
     })
     fetchData()
-    setSearch(false)
+    setSearch(false)}
   }, [search, category])
   
   const handleNextPage = () => {
