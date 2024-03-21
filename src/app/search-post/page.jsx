@@ -32,6 +32,7 @@ const SearchedProducts = () => {
       duration:3000,
     })
     fetchData()
+    setSearch(false)
   }, [search, category])
   
   const handleNextPage = () => {

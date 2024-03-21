@@ -41,10 +41,11 @@ const Nav = () => {
         await signOut({ redirect: false }); 
         router.push('/');
       };
+
     if (typeof window !== 'undefined') {
       document.getElementById('searchInput').addEventListener('keypress', function(event) {
         if (event.key === 'Enter') {
-            ()=>setSearch((prevState)=>!prevState)
+            setSearch(true)
             if (window.location.pathname !== '/search-post'){
                 event.preventDefault();
                 router.push('/search-post')}
@@ -90,7 +91,7 @@ const Nav = () => {
                         
                     </button>
                     <button>
-                        <Link onClick={()=>setSearch((prevState)=>!prevState)} href='/search-post'>
+                        <Link onClick={()=>setSearch(true)} href='/search-post'>
                             <div className="sm:flex hidden items-center px-6 rounded-[57px] py-6 ml-3 ring-1 ring-inset ring-gray-300 bg-white">
                                 <IoIosSearch className="h-5 w-5 text-gray-400" aria-hidden="true" />
                             </div>
