@@ -55,7 +55,7 @@ const Nav = () => {
     return (
         <>
         {showCart && <Cart />}
-        <nav className='flex justify-between sm:justify-evenly h-auto pb-2 w-full relative' >
+        <nav className='flex sm:justify-between justify-evenly h-auto pb-2 w-full relative' >
             <div className='flex gap-2 ml-6 flex-center flex-row items-center'>
                 <Link href='/' className='flex flex-row absolute top-[-10px] left-4'>
                     <Image src={logo} width={35} height='auto' alt='logo' style={{objectFit: "contain"}}/>
