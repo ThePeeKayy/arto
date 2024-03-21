@@ -29,7 +29,7 @@ const SearchedProducts = () => {
 
   useEffect(() => {
     if(search){toast('Loading...',{
-      duration:3000,
+      duration:5000,
     })
     fetchData()
     setSearch(false)}
