@@ -27,8 +27,8 @@ const SearchedProducts = () => {
     setProducts(result)}
 
   useEffect(() => {
-    if (search) fetchData()
-    return ()=> setSearch(false)
+    if (search) {fetchData()
+    setSearch(false)}
   }, [search, category])
   
   const handleNextPage = () => {
