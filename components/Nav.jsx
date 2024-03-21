@@ -41,14 +41,14 @@ const Nav = () => {
         await signOut({ redirect: false }); 
         router.push('/');
       };
-
+    if (typeof window !== 'undefined') {
       document.getElementById('searchInput').addEventListener('keypress', function(event) {
         if (event.key === 'Enter') {
             router.push('/search-post')
             event.target.value = '';
             event.preventDefault();
         }
-    });
+    })};
     
     
     return (
