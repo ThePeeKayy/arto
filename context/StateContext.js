@@ -22,6 +22,7 @@ export const StateContext = ({ children }) => {
     const [activeAuthor,setActiveAuthor] = useState('')
     const [modal,setModal] = useState(false)
     const [guestSession,setGuestSession] = useState(false)
+    const [search, setSearch] = useState(false)
 
 
     const onAdd = (product, quantity) =>{
@@ -112,7 +113,7 @@ export const StateContext = ({ children }) => {
 
     return (
         <Context.Provider
-            value={{activeAuthor, setActiveAuthor,isPreviewing, setIsPreviewing,acceptedOffer, setAcceptedOffer,offer,setOffer,channelQuery,setChannelQuery, query, setQuery, category, setCategory, showCart, setShowCart, cartItems, totalPrice, totalQuantity,qty,incQty,decQty,onAdd, toggleCartItemQuantity, onRemove, setCartItems, setTotalPrice, setTotalQuantities,modal,setModal,handleGuestMode,guestSession}}
+            value={{search, setSearch, activeAuthor, setActiveAuthor,isPreviewing, setIsPreviewing,acceptedOffer, setAcceptedOffer,offer,setOffer,channelQuery,setChannelQuery, query, setQuery, category, setCategory, showCart, setShowCart, cartItems, totalPrice, totalQuantity,qty,incQty,decQty,onAdd, toggleCartItemQuantity, onRemove, setCartItems, setTotalPrice, setTotalQuantities,modal,setModal,handleGuestMode,guestSession}}
         >
             {children}
         </Context.Provider>

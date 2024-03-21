@@ -9,11 +9,10 @@ const SearchedProducts = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [products,setProducts] = useState([])
   const totalPages = Math.ceil(products.length / 16);
-  const {query, category} = useStateContext() 
+  const {query, category ,search,setSearch} = useStateContext() 
   const [isTransitioning, setIsTransitioning] = useState(0);
 
-  useEffect(() => {
-    const fetchData = async ()=>
+  const fetchData = async ()=>
     {const response = await fetch('/api/listing',{
       method:'POST',
       headers: {
@@ -26,8 +25,15 @@ const SearchedProducts = () => {
     })
     const result = await response.json()
     setProducts(result)}
+
+  useEffect(() => {
+    
+    if (search){
     fetchData()
-  }, [query,category])
+    setSearch(false)
+  }
+    
+  }, [search, category])
   
   const handleNextPage = () => {
     setIsTransitioning(1);

@@ -26,7 +26,7 @@ const Nav = () => {
     const [providers, setProviders] = useState(null);
     const [dropDown,setDropDown] =useState(false)
     const [menuOpen,setMenuOpen] =useState(false)
-    const {category, setCategory,query, setQuery,showCart,setShowCart, guestSession, handleGuestMode} = useStateContext()
+    const {category, setCategory,query, setQuery,showCart,setShowCart, guestSession, handleGuestMode, search, setSearch} = useStateContext()
     const router = useRouter()
     useEffect(()=>{
         const setUpProviders = async () => {
@@ -43,9 +43,11 @@ const Nav = () => {
       };
     if (typeof window !== 'undefined') {
       document.getElementById('searchInput').addEventListener('keypress', function(event) {
-        if (event.key === 'Enter' && window.location.pathname !== '/search-post') {
+        if (event.key === 'Enter') {
+            setSearch(true)
+            if (window.location.pathname !== '/search-post'){
             event.preventDefault();
-            router.push('/search-post');
+            router.push('/search-post')}
         }
     })};
     
@@ -60,7 +62,7 @@ const Nav = () => {
                     <p className='text-[75px] font-grunge'><span className='text-transparent md:text-black'>rto</span></p>
                 </Link>
             </div>
-            <div className='w-[35%] min-w-[285px] ml-[33px] md:ml-[70px]'>
+            <div className='w-[35%] min-w-[285px] ml-[52px] md:ml-[70px]'>
         
                 <div className="mt-3 flex rounded- shadow- w-[85%] sm:w-full  h-[70px] relative">
                     <div className="relative flex flex-grow-[5] items-stretch focus-within:z-10">
@@ -88,7 +90,7 @@ const Nav = () => {
                         
                     </button>
                     <button>
-                        <Link href='/search-post'>
+                        <Link onClick={()=>setSearch(true)} href='/search-post'>
                             <div className="sm:flex hidden items-center px-6 rounded-[57px] py-6 ml-3 ring-1 ring-inset ring-gray-300 bg-white">
                                 <IoIosSearch className="h-5 w-5 text-gray-400" aria-hidden="true" />
                             </div>
@@ -173,7 +175,7 @@ const Nav = () => {
                 </div>
                 </>
                 ):(
-                    <div className='mt-3 mx-2 flex flex-row gap-2'>
+                    <div className='mt-3 mr-2 flex flex-row gap-2'>
                         <button onClick={()=>setMenuOpen(true)} className='lg:hidden bg-white ring-1 ring-inset ring-gray-300 text-gray-600 font-bold h-[70px] w-[70px] rounded-[70px] p-6 flex-0.5 flex justify-center flex-row flex-nowrap'><IoMenu size={30}/></button>
                         {menuOpen && <div className="fixed z-20 inset-0 overflow-y-auto flex items-start justify-end m-6">
                             <div className="fixed inset-0 bg-black opacity-25" onClick={()=>setMenuOpen(false)}/>
@@ -198,7 +200,7 @@ const Nav = () => {
                                     
                                 </div>
                         </div>}
-                        <div className='hidden lg:flex flex-row gap-x-3 ml-2'>
+                        <div className='hidden lg:flex flex-row gap-x-3'>
                         {providers && Object.values(providers).map((provider) => (<button
                             type='button'
                             key={provider.name}
