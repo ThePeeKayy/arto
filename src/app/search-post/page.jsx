@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { useStateContext } from "../../../context/StateContext";
 import { FaAngleLeft,FaAngleRight } from "react-icons/fa";
 import Footer from "../../../components/Footer";
+import toast from "react-hot-toast";
 
 const SearchedProducts = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -27,8 +28,8 @@ const SearchedProducts = () => {
     setProducts(result)}
 
   useEffect(() => {
-    if (search) fetchData()
-    return ()=>setSearch(false)
+    toast('Loading...')
+    fetchData()
   }, [search, category])
   
   const handleNextPage = () => {
