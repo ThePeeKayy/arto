@@ -127,7 +127,7 @@ const Nav = () => {
                     </Link>
                 </div>
                 <div className='flex gap-1 md:gap-2 mt-3 sm:pr-2 pr-[54px] lg:hidden justify-end '>
-                    <button onClick={()=>setMenuOpen(true)} className='bg-white ring-1 ring-inset ring-gray-300 text-gray-600 font-bold h-[70px] w-[70px] rounded-[70px] p-6 flex-0.5 flex justify-center flex-row flex-nowrap'><IoMenu size={30}/></button>
+                    <button onClick={()=>setMenuOpen(true)} className='sm:mr-0 mr-8 bg-white ring-1 ring-inset ring-gray-300 text-gray-600 font-bold h-[70px] w-[70px] rounded-[70px] p-6 flex-0.5 flex justify-center flex-row flex-nowrap'><IoMenu size={30}/></button>
                     {menuOpen && <div className="fixed z-20 inset-0 overflow-y-auto flex items-start justify-end m-6">
                         <div className="fixed inset-0 bg-black opacity-25" onClick={()=>setMenuOpen(false)}/>
                            <div className="bg-white flex flex-col gap-y-2 opacity-full p-6 rounded-lg w-[300px] h-[430px] shadow-lg z-10">
@@ -177,7 +177,7 @@ const Nav = () => {
                 </>
                 ):(
                     <div className='mt-3 sm:pr-2 pr-[54px] flex flex-row gap-2'>
-                        <button onClick={()=>setMenuOpen(true)} className='lg:hidden bg-white ring-1 ring-inset ring-gray-300 text-gray-600 font-bold h-[70px] w-[70px] rounded-[70px] p-6 flex-0.5 flex justify-center flex-row flex-nowrap'><IoMenu size={30}/></button>
+                        <button onClick={()=>setMenuOpen(true)} className='sm:mr-0 mr-8 lg:hidden bg-white ring-1 ring-inset ring-gray-300 text-gray-600 font-bold h-[70px] w-[70px] rounded-[70px] p-6 flex-0.5 flex justify-center flex-row flex-nowrap'><IoMenu size={30}/></button>
                         {menuOpen && <div className="fixed z-20 inset-0 overflow-y-auto flex items-start justify-end m-6">
                             <div className="fixed inset-0 bg-black opacity-25" onClick={()=>setMenuOpen(false)}/>
                             <div className="bg-white flex flex-col gap-y-2 opacity-full p-6 rounded-lg w-[300px] h-[190px] shadow-lg z-10">
