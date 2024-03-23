@@ -56,7 +56,7 @@ const Nav = () => {
         <>
         {showCart && <Cart />}
         <nav className='flex sm:justify-between justify-around h-auto pb-2 sm:mr-0 mr-[50px] sm:w-full w-[85%] relative' >
-            <div className='flex gap-2 ml-6 mr-[70px] flex-center flex-row items-center'>
+            <div className='flex gap-2 ml-6 mr-[10px] flex-center flex-row items-center'>
                 <Link href='/' className='flex flex-row absolute top-[-10px] left-4'>
                     <Image src={logo} width={35} height='auto' alt='logo' style={{objectFit: "contain"}}/>
                     <p className='text-[75px] font-grunge'><span className='text-transparent md:text-black'>rto</span></p>
@@ -126,8 +126,8 @@ const Nav = () => {
                         </div>
                     </Link>
                 </div>
-                <div className='flex gap-1 md:gap-2 mt-3 sm:ml-[-8px] ml-[-54px] lg:hidden justify-end '>
-                    <button onClick={()=>setMenuOpen(true)} className='sm:ml-0 ml-[-54px] bg-white ring-1 ring-inset ring-gray-300 text-gray-600 font-bold h-[70px] w-[70px] rounded-[70px] p-6 flex-0.5 flex justify-center flex-row flex-nowrap'><IoMenu size={30}/></button>
+                <div className='flex gap-1 md:gap-2 mt-3 sm:ml-[-8px] ml-[-12px] lg:hidden justify-end '>
+                    <button onClick={()=>setMenuOpen(true)} className='sm:ml-0 ml-[-12px] bg-white ring-1 ring-inset ring-gray-300 text-gray-600 font-bold h-[70px] w-[70px] rounded-[70px] p-6 flex-0.5 flex justify-center flex-row flex-nowrap'><IoMenu size={30}/></button>
                     {menuOpen && <div className="fixed z-20 inset-0 overflow-y-auto flex items-start justify-end m-6">
                         <div className="fixed inset-0 bg-black opacity-25" onClick={()=>setMenuOpen(false)}/>
                            <div className="bg-white flex flex-col gap-y-2 opacity-full p-6 rounded-lg w-[300px] h-[430px] shadow-lg z-10">
@@ -176,8 +176,8 @@ const Nav = () => {
                 </div>
                 </>
                 ):(
-                    <div className='mt-3 sm:ml-[-8px] ml-[-54px] flex flex-row gap-2'>
-                        <button onClick={()=>setMenuOpen(true)} className='sm:ml-0 ml-[-54px] lg:hidden bg-white ring-1 ring-inset ring-gray-300 text-gray-600 font-bold h-[70px] w-[70px] rounded-[70px] p-6 flex-0.5 flex justify-center flex-row flex-nowrap'><IoMenu size={30}/></button>
+                    <div className='mt-3 sm:ml-[-8px] ml-[-12px] flex flex-row gap-2'>
+                        <button onClick={()=>setMenuOpen(true)} className='sm:ml-0 ml-[-12px] lg:hidden bg-white ring-1 ring-inset ring-gray-300 text-gray-600 font-bold h-[70px] w-[70px] rounded-[70px] p-6 flex-0.5 flex justify-center flex-row flex-nowrap'><IoMenu size={30}/></button>
                         {menuOpen && <div className="fixed z-20 inset-0 overflow-y-auto flex items-start justify-end m-6">
                             <div className="fixed inset-0 bg-black opacity-25" onClick={()=>setMenuOpen(false)}/>
                             <div className="bg-white flex flex-col gap-y-2 opacity-full p-6 rounded-lg w-[300px] h-[190px] shadow-lg z-10">
